@@ -1,8 +1,5 @@
 const dificuldade = window.location.search.replace('?', '');
 
-var audio = new Audio('audio_file.mp3');
-audio.play();
-
 switch(dificuldade) {
 	case 'muito-facil':
 		intervaloCriarMosquito = 2500;
