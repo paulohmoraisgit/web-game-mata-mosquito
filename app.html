@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mosquito Massacre - Web Game</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" type="text/css" href="./estilo.css">
+
+  <script src="./js/jogo/areaJogo.js"></script>
+  <script src="./js/tratarVidasJogador.js"></script>
+  <script src="./js/jogo/tempoJogo.js"></script>
+
+  <script src="./js/mosquito/gerenciarMosquitosCriados.js"></script>
+  <script src="./js/mosquito/criarMosquitos.js"></script>
+  <script src="./js/mosquito/removerMosquitos.js"></script>
+  <script src="./js/mosquito/dimensionarMosquito.js"></script>
+  <script src="./js/mosquito/posicionarMosquito.js"></script>
+
+  <script src="./js/jogo/definirDificuldade.js"></script>
+
+  <script src="./js/jogo/tratarVitoriaJogo.js"></script>
+  <script src="./js/jogo/tratarFimJogo.js"></script>
+
+  <script src="./js/funcoesAuxiliares.js"></script>
+</head>
+
+<body onresize="ajustaAreaJogo()">
+  <div id="fundo-cenario"></div>
+
+  <div id="painel" class="desativar-select-drag">
+    <div>
+      <img class="vida desativar-select-drag" src="./img/coracao/coracao_vazio.png"/>
+      <img class="vida desativar-select-drag" src="./img/coracao/coracao_vazio.png"/>
+      <img class="vida desativar-select-drag" src="./img/coracao/coracao_vazio.png"/>
+      <img class="vida desativar-select-drag" src="./img/coracao/coracao_vazio.png"/>
+      <img class="vida desativar-select-drag" src="./img/coracao/coracao_vazio.png"/>
+      <img class="vida desativar-select-drag" src="./img/coracao/coracao_vazio.png"/>
+    </div>
+    <div id="cronometro">Tempo de jogo: <span id="tempo-jogo">--</span>s</div>
+  </div>
+
+  <script>
+    iniciarVidasJogador();
+    iniciarCronometro(1);
+    gerenciarCriacaoMosquitos(true);
+
+    if(dificuldade == 'inferno') {
+      document.getElementById('fundo-cenario').style.backgroundImage = "url('./img/bg/inferno_bg.png')";
+    }
+  </script>
+</body>
+</html>
