@@ -15,7 +15,7 @@ function removerMosquitosExcedentes() {
 }
 
 function removerMosquitoAleatorioExcetoUltimo() {
-	let i = Math.floor(Math.random() * (mosquitosCriados.length - 1));
+	let i = Math.floor(Math.random() * (mosquitosCriados.length - numeroMosquitosPorCriacao));
 	removerMosquito(mosquitosCriados[i]);
 }
 
@@ -27,7 +27,7 @@ function removerMosquito(mosquito) {
 			break;
 		}
 	}
-
+	
 	mosquitosCriados = limparIndicesVazios(mosquitosCriados);
 }
 
